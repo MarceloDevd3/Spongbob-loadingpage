@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+}
+
+@keyframes show-me {
+    0% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+body {
+    font-size: 1.3em;
+    overflow: hidden;
+}
+
+
+@keyframes moves-left {
+    from {
+        position: relative;
+        left: -1000px;
+    }
+
+    to {
+        position: relative;
+        left: 0;
+    }
+}
+
+@keyframes moves-right {
+    from {
+        position: relative;
+        right: -1000px;
+        opacity: 0.5;
+    }
+
+    to {
+        position: relative;
+        right: 0;
+        opacity: 1;
+    }
+}
+
+
+.bg.active {
+    background: linear-gradient(130deg, #c9934b, #e4d15b, #fcce45);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg {
+    background: linear-gradient(#f2a7a9, #e48282, #f27373);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-right: 25px;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    padding: 2em 2em;
+}
+
+ul li a {
+    margin-left: 2em;
+}
+
+ li > a {
+    padding: 0.5em 0;
+}
+
+
+li a:hover {
+    text-decoration: underline;
+    transition: ease-in 0.1s;
+}
+
+
+
+.sub-Nav {
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+}
+
+.dropdown-list {
+    display: none;
+}
+
+.bob {
+    display: none;
+    position: absolute;
+}
+
+
+
+.content {
+    position: relative;
+    width: 570px;
+    animation: moves-left ease-in 0.5s;
+}
+
+
+h1,
+h2 {
+    letter-spacing: 3px;
+}
+
+
+.content h1 {
+    font-size: 4.5em;
+    margin-top: 0.5em;
+}
+
+.content h2 {
+    font-size: 1.7em;
+    margin-bottom: 1.2em;
+}
+
+.content button {
+    margin: 1em 0;
+    border: none;
+    background-color: transparent;
+    outline: 2px solid wheat;
+    padding: 0.5em;
+    color: aliceblue;
+}
+
+button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.bob.active {
+    display: flex;
+    padding: 0 2em;
+    align-items: center;
+}
+
+.characters,
+.characters.active {
+    position: relative;
+    animation: show-me ease 1.5s;
+    left: 25%;
+}
+
+#patrick {
+    width: 80%;
+}
+
+#bob {
+    min-width: 50%;
+}
+
+
+
+.slide-rows {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 44%;
+    right: 2.5%;
+    z-index: 2;
+}
+
+.slide-rows .btn {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: azure;
+    box-shadow: 1px 3px 26px 0px rgba(179, 154, 154, 0.75);
+    -webkit-box-shadow: 1px 3px 26px 0px rgba(179, 154, 154, 0.75);
+    -moz-box-shadow: 1px 3px 26px 0px rgba(179, 154, 154, 0.75);
+}
+
+
+.btn:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+    #patrick {
+        width: 75%;
+    }
+
+    .characters,
+    .characters.active {
+        position: relative;
+        animation: show-me ease 1.5s;
+        left: -2.5%;
+    }
+}
+
+@media (min-width: 377px) and (max-width: 750px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding-bottom: 5em;
+    }
+
+    .bg.active {
+        background: linear-gradient(130deg, #c9934b, #e4d15b, #fcce45);
+        width: 100%;
+        height: 132vh;
+    }
+    
+    .bg {
+        background: linear-gradient(#f2a7a9, #e48282, #f27373);
+        width: 100%;
+        height: 132vh;
+    }
+
+
+
+    .bob.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        position: relative;
+        width: 400px;
+        animation: moves-left ease-in 0.5s;
+    }
+    
+
+    .characters,
+    .characters.active {
+        position: relative;
+        animation: show-me ease 1.5s;
+        left: -15%;
+    }
+
+    #bob {
+        left: -20%;  
+    }
+    #patrick {
+        top: 50px;
+        width: 75%;
+    }
+
+
+    .content h1 {
+        font-size: 2.5em;
+    }
+
+    .content h2 {
+        font-size: 0.9em;
+    }
+
+    .bob {
+        display: none;
+        position: absolute;
+        top: 25%;
+    }
+
+
+    .slide-rows {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 95%;
+        right: 7.5%;
+        z-index: 2;
+    }
+    
+    
+
+}
+
+
+
+
